@@ -1,0 +1,13 @@
+.navbar {
+  height: 56px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 10px 0;
+  gap: 10px;
+
+  i.fa-film {
+    font-size: 1.5em;
+  }
+}
