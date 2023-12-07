@@ -29,25 +29,16 @@
     justify-content: center;
     overflow: hidden;
   }
-  > img,
-  > i.fa-image-portrait,
-  > i.fa-file-image {
-    width: 46px;
-    min-width: 46px;
-  }
-  > i.fa-image-portrait,
-  > i.fa-file-image {
-    text-align: center;
-    height: 69px;
-    font-size: 60px;
-  }
+
   span {
     text-overflow: ellipsis;
     overflow: hidden;
   }
+
   span:not(.title) {
     font-size: 14px;
   }
+
   span.title {
     color: white;
     font-weight: 500;

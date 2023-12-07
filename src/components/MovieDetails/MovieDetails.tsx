@@ -5,10 +5,8 @@ import { getReleaseYear, getRuntime } from "../../utils/string";
 import "./MovieDetails.scss";
 import Credits from "./components/Credits";
 import Reviews from "./components/Reviews";
-
-const imageBaseUrl = "http://image.tmdb.org/t/p/";
-const posterSize = "w342";
-const backdropSize = "w1280";
+import { PosterImg } from "../PosterImg";
+import { imageBaseUrl } from "../../../config";
 
 export default function MovieDetails() {
   const { movie } = useLoaderData() as { movie: Movie };
@@ -19,15 +17,15 @@ export default function MovieDetails() {
     <>
       <img
         className="backdrop"
-        src={`${imageBaseUrl}${backdropSize}${movie.backdrop_path}`}
+        src={`${imageBaseUrl}w1280${movie.backdrop_path}`}
         alt={movie.original_title}
       />
       <div className="movie-details">
         <div className="movie-details-header">
-          <img
-            className="poster"
-            src={`${imageBaseUrl}${posterSize}${movie.poster_path}`}
+          <PosterImg
+            path={movie.poster_path}
             alt={movie.original_title}
+            size="w342"
           />
           <div>
             <h2>{movie.original_title}</h2>

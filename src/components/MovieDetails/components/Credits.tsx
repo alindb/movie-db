@@ -3,8 +3,7 @@ import { Credits as CreditsType } from "../../../typescript/interfaces";
 import { useState } from "react";
 import classNames from "classnames";
 import Button from "react-bootstrap/Button";
-
-const imageBaseUrl = "http://image.tmdb.org/t/p/";
+import { ProfileImg } from "../../ProfileImg";
 
 export default function Credits({ credits }: { credits: CreditsType }) {
   const [castExpanded, setCastExpanded] = useState(false);
@@ -21,14 +20,7 @@ export default function Credits({ credits }: { credits: CreditsType }) {
       >
         {credits.cast.map((cast) => (
           <li className="cast" key={cast.id}>
-            {cast.profile_path ? (
-              <img
-                src={`${imageBaseUrl}w45${cast.profile_path}`}
-                alt={cast.name}
-              />
-            ) : (
-              <i className="fa-solid fa-circle-user no-profile-img" />
-            )}
+            <ProfileImg path={cast.profile_path} alt={cast.name} />
             <div>
               <Link to={`/person/${cast.id}`}>
                 <h5>{cast.name}</h5>
@@ -55,14 +47,7 @@ export default function Credits({ credits }: { credits: CreditsType }) {
       >
         {credits.crew.map((crew) => (
           <li className="cast" key={`${crew.id}-${crew.job}`}>
-            {crew.profile_path ? (
-              <img
-                src={`${imageBaseUrl}w45${crew.profile_path}`}
-                alt={crew.name}
-              />
-            ) : (
-              <i className="fa-solid fa-circle-user no-profile-img" />
-            )}
+            <ProfileImg path={crew.profile_path} alt={crew.name} />
             <div>
               <Link to={`/person/${crew.id}`}>
                 <h5>{crew.name}</h5>

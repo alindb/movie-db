@@ -34,6 +34,10 @@ const router = createBrowserRouter([
   },
 ]);
 
+if (history.scrollRestoration) {
+  history.scrollRestoration = "manual";
+}
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <RouterProvider router={router} />

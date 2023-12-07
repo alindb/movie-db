@@ -2,9 +2,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { Movie } from "../../../typescript/interfaces";
 import { getReleaseYear } from "../../../utils/string";
 import { useNavigate } from "react-router-dom";
-
-const imageBaseUrl = "http://image.tmdb.org/t/p/";
-const posterSize = "w92";
+import { PosterImg } from "../../PosterImg";
 
 export default function MovieItem({
   movie,
@@ -22,14 +20,7 @@ export default function MovieItem({
 
   return (
     <Dropdown.Item as="button" onClick={onClick} className="list-item-movie">
-      {movie.poster_path ? (
-        <img
-          src={`${imageBaseUrl}${posterSize}${movie.poster_path}`}
-          alt={movie.original_title}
-        />
-      ) : (
-        <i className="fa-solid fa-file-image" />
-      )}
+      <PosterImg path={movie.poster_path} alt={movie.original_title} />
       <div>
         <span className="title">{movie.original_title}</span>
         <span>{getReleaseYear(movie)}</span>

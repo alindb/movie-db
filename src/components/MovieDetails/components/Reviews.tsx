@@ -1,11 +1,8 @@
 import { Reviews as ReviewsType } from "../../../typescript/interfaces";
-import "./Reviews.scss";
-import { getParagraphs } from "../../../utils/string";
 import Review from "./Review";
+import "./Reviews.scss";
 
 export default function Reviews({ reviews }: { reviews: ReviewsType }) {
-  console.warn("Reviews", getParagraphs(reviews.results[3].content));
-
   return (
     <div className="reviews">
       <h3>{`Reviews (${reviews.results.length})`}</h3>

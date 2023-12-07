@@ -1,13 +1,11 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { Person } from "../../typescript/interfaces";
-import { imageBaseUrl } from "../../../config";
-import "./PersonDetails.scss";
 import { Button } from "react-bootstrap";
 import { useState } from "react";
 import { getParagraphs, getReleaseYear } from "../../utils/string";
-
-const posterSize = "w342";
-const moviePosterSize = "w92";
+import { PosterImg } from "../PosterImg";
+import { ProfileImg } from "../ProfileImg";
+import "./PersonDetails.scss";
 
 const GENDER = {
   0: "Unknown",
@@ -35,11 +33,7 @@ export function PersonDetails() {
   return (
     <div className="person-details">
       <div className="person-details-column">
-        <img
-          className="profile-image"
-          src={`${imageBaseUrl}${posterSize}${person.profile_path}`}
-          alt={person.name}
-        />
+        <ProfileImg path={person.profile_path} alt={person.name} size="w342" />
         <h4 className="personal-info-header">Personal Info</h4>
         <h5>Known For</h5>
         <p className="personal-info">{person.known_for_department}</p>
@@ -49,6 +43,8 @@ export function PersonDetails() {
         <p className="personal-info">{`${person.birthday} (${getAge(
           person
         )} years old)`}</p>
+        <h5>Place of Birth</h5>
+        <p className="personal-info">{person.place_of_birth}</p>
       </div>
       <div className="person-details-column">
         <h2>{person.name}</h2>
@@ -72,15 +68,8 @@ export function PersonDetails() {
         <h5>Actor</h5>
         <div className="person-movies">
           {person.movie_credits.cast.slice(0, 8).map((movie) => (
-            <Link to={`/movie/${movie.id}`}>
-              {movie.poster_path ? (
-                <img
-                  src={`${imageBaseUrl}${moviePosterSize}${movie.poster_path}`}
-                  alt={movie.original_title}
-                />
-              ) : (
-                <i className="fa-solid fa-file-image" />
-              )}
+            <Link preventScrollReset={true} to={`/movie/${movie.id}`}>
+              <PosterImg path={movie.poster_path} alt={movie.original_title} />
               <div>
                 <p className="title">{movie.original_title}</p>
                 <p className="character">as {movie.character}</p>
@@ -93,14 +82,7 @@ export function PersonDetails() {
         <div className="person-movies">
           {person.movie_credits.crew.slice(0, 8).map((movie) => (
             <Link to={`/movie/${movie.id}`}>
-              {movie.poster_path ? (
-                <img
-                  src={`${imageBaseUrl}${moviePosterSize}${movie.poster_path}`}
-                  alt={movie.original_title}
-                />
-              ) : (
-                <i className="fa-solid fa-file-image" />
-              )}
+              <PosterImg path={movie.poster_path} alt={movie.original_title} />
               <div>
                 <p className="title">{movie.original_title}</p>
                 <p className="job">{movie.job}</p>

@@ -3,28 +3,21 @@ import Badge from "react-bootstrap/Badge";
 import Button from "react-bootstrap/Button";
 import { Review as ReviewType } from "../../../typescript/interfaces";
 import { getParagraphs } from "../../../utils/string";
-import { imageBaseUrl } from "../../../../config";
+import { ProfileImg } from "../../ProfileImg";
 import "./Reviews.scss";
 
 export default function Review({ review }: { review: ReviewType }) {
   const [seeMore, setSeeMore] = useState(false);
 
   const reviewContent = getParagraphs(review.content);
-
-  console.warn("reviewContent", reviewContent);
-
   const paragraphs = seeMore ? reviewContent : reviewContent.slice(0, 2);
 
   return (
     <li className="review" key={review.id}>
-      {review.author_details.avatar_path ? (
-        <img
-          src={`${imageBaseUrl}w45${review.author_details.avatar_path}`}
-          alt={review.author}
-        />
-      ) : (
-        <i className="fa-solid fa-circle-user no-profile-img" />
-      )}
+      <ProfileImg
+        path={review.author_details.avatar_path}
+        alt={review.author}
+      />
       <div className="review-info">
         <h5>{review.author}</h5>
         <div>
