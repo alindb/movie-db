@@ -30,10 +30,10 @@ export default function Credits({ credits }: { credits: CreditsType }) {
               <i className="fa-solid fa-circle-user no-profile-img" />
             )}
             <div>
-              <Link to={`/actor/${cast.id}`}>
+              <Link to={`/person/${cast.id}`}>
                 <h5>{cast.name}</h5>
               </Link>
-              <p>{cast.character}</p>
+              <p>as {cast.character}</p>
             </div>
           </li>
         ))}
@@ -64,7 +64,7 @@ export default function Credits({ credits }: { credits: CreditsType }) {
               <i className="fa-solid fa-circle-user no-profile-img" />
             )}
             <div>
-              <Link to={`/actor/${crew.id}`}>
+              <Link to={`/person/${crew.id}`}>
                 <h5>{crew.name}</h5>
               </Link>
               <p>{crew.job}</p>

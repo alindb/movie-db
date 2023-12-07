@@ -21,14 +21,20 @@ export interface Movie {
   vote_count: number;
   media_type: "movie";
 }
-
-export interface Actor {
-  gender: 1 | 2;
+export interface Person {
+  gender: 0 | 1 | 2 | 3;
+  biography: string;
+  birthday: string;
+  deathday: string;
   id: number;
-  known_for: Movie[];
   known_for_department: string;
+  movie_credits: {
+    cast: (Movie & CastMember)[];
+    crew: (Movie & CrewMember)[];
+  };
   name: string;
   original_name: string;
+  place_of_birth: string;
   popilarity: number;
   profile_path: string;
   media_type: "person";

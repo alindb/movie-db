@@ -3,11 +3,11 @@ import { debounce } from "lodash";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownItem from "../Search/components/DropdownItem";
 import { searchAll } from "../../utils/api/get";
-import { Movie, Actor } from "../../typescript/interfaces";
+import { Movie, Person } from "../../typescript/interfaces";
 import "./Search.scss";
 
 export default function Search() {
-  const [searchResult, setSearchResult] = useState<(Actor | Movie)[]>([]);
+  const [searchResult, setSearchResult] = useState<(Person | Movie)[]>([]);
 
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -44,7 +44,7 @@ export default function Search() {
         ref={inputRef}
       />
       <Dropdown.Menu>
-        {searchResult.map((searchResult: Movie | Actor) => (
+        {searchResult.map((searchResult: Movie | Person) => (
           <DropdownItem
             key={searchResult.id}
             item={searchResult}

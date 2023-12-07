@@ -1,5 +1,5 @@
 import Dropdown from "react-bootstrap/Dropdown";
-import { Actor } from "../../../typescript/interfaces";
+import { Person } from "../../../typescript/interfaces";
 import { useNavigate } from "react-router-dom";
 
 const imageBaseUrl = "http://image.tmdb.org/t/p/";
@@ -9,7 +9,7 @@ export default function ActorItem({
   actor,
   preNavigate,
 }: {
-  actor: Actor;
+  actor: Person;
   preNavigate: () => void;
 }) {
   const navigate = useNavigate();

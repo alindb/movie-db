@@ -5,5 +5,16 @@
   max-width: 1024px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 20px;
+}
+
+button.btn-outline-secondary {
+  background: var(--bs-body-bg);
+  font-size: 14px;
+  padding: 4px 10px;
+  &:hover,
+  &:focus,
+  &:active {
+    background: var(--bs-body-bg);
+  }
 }

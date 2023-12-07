@@ -18,11 +18,30 @@
       object-fit: contain;
     }
 
+    .review-info > div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .created-at {
+        font-size: 14px;
+      }
+    }
+
     p {
+      width: 100%;
       font-size: 14px;
-      max-height: 60px;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+
+    .review-paragraph {
+      margin-bottom: 16px;
+    }
+
+    .badge {
+      i {
+        margin-right: 5px;
+      }
     }
   }
 }

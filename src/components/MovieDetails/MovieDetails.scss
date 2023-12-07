@@ -1,6 +1,6 @@
 .backdrop {
   width: calc(100% - 20px);
-  max-width: 1004px;
+  max-width: 984px;
   max-height: 400px;
   object-fit: cover;
   position: absolute;
@@ -68,10 +68,7 @@
       flex-flow: row wrap;
       padding: 0;
       gap: 10px;
-
-      > button {
-        background: var(--bs-body-bg);
-      }
+      margin-bottom: 40px;
 
       &.collapsed {
         max-height: 350px;

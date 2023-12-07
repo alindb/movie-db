@@ -1,17 +1,17 @@
 import Dropdown from "react-bootstrap/Dropdown";
 import ActorItem from "./ActorItem";
 import MovieItem from "./MovieItem";
-import { Actor, Movie } from "../../../typescript/interfaces";
+import { Person, Movie } from "../../../typescript/interfaces";
 
-const isMovie = (item: Movie | Actor | null): item is Movie => {
+const isMovie = (item: Movie | Person | null): item is Movie => {
   if (!item) return false;
   if ((item as Movie).media_type === "movie") return true;
   return false;
 };
 
-const isActor = (item: Movie | Actor | null): item is Actor => {
+const isActor = (item: Movie | Person | null): item is Person => {
   if (!item) return false;
-  if ((item as Actor).media_type === "person") return true;
+  if ((item as Person).media_type === "person") return true;
   return false;
 };
 
@@ -19,7 +19,7 @@ export default function DropdownItem({
   item,
   preNavigate,
 }: {
-  item: Actor | Movie | null;
+  item: Person | Movie | null;
   preNavigate: () => void;
 }) {
   if (isActor(item)) {

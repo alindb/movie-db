@@ -7,7 +7,11 @@
   padding: 10px 0;
   gap: 10px;
 
-  i.fa-film {
+  i.fa-film,
+  i.fa-magnifying-glass {
     font-size: 1.5em;
+  }
+  i.fa-magnifying-glass {
+    margin-left: 20px;
   }
 }

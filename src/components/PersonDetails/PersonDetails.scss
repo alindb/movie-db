@@ -1,0 +1,91 @@
+.person-details {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 10px;
+
+  .person-details-column {
+    h2 {
+      margin-bottom: 30px;
+      margin-top: 10px;
+    }
+  }
+
+  .person-details-header {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 10px;
+    align-items: flex-start;
+    gap: 10px;
+    max-height: 375px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    h2 {
+      margin-bottom: 30px;
+    }
+  }
+
+  .profile-image {
+    width: 250px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+
+  .personal-info-header {
+    margin-bottom: 10px;
+  }
+
+  .personal-info {
+    margin-bottom: 20px;
+  }
+
+  .biography-container {
+    > button {
+      background: var(--bs-body-bg);
+      padding: 0 5px;
+      float: right;
+    }
+  }
+
+  .biography-paragraph {
+    margin-bottom: 20px;
+  }
+
+  .person-movies {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 30px;
+
+    a {
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 10px;
+      align-items: center;
+      padding: 10px;
+      width: 100%;
+      border-bottom: 1px solid var(--bs-body-color);
+
+      .character,
+      .job {
+        font-weight: 300;
+      }
+
+      > :last-child {
+        margin-left: auto;
+      }
+    }
+    img,
+    i.fa-file-image,
+    i.fa-image-portrait {
+      width: 45px;
+      height: 68px;
+    }
+    i.fa-file-image,
+    i.fa-image-portrait {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 45px;
+    }
+  }
+}
