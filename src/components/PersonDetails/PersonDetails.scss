@@ -1,11 +1,36 @@
 .person-details {
   display: flex;
   flex-flow: row nowrap;
-  gap: 10px;
+  gap: var(--padding);
+
+  .person-name-mobile {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-flow: column nowrap;
+
+    .person-name {
+      display: none;
+    }
+    .person-name-mobile {
+      display: block;
+      text-align: center;
+    }
+    h5 {
+      font-size: 18px;
+    }
+  }
 
   .person-details-column {
     h2 {
       margin-bottom: 20px;
+    }
+    @media screen and (max-width: 768px) {
+      img.profile {
+        display: block;
+        margin: 0 auto 10px auto;
+      }
     }
   }
 

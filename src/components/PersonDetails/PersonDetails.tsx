@@ -39,6 +39,7 @@ export function PersonDetails() {
     <div className="person-details">
       <div className="person-details-column">
         <ProfileImg path={person.profile_path} alt={person.name} size="w342" />
+        <h2 className="person-name-mobile">{person.name}</h2>
         <h4 className="personal-info-header">Personal Info</h4>
         <h5>Known For</h5>
         <p className="personal-info">{person.known_for_department}</p>
@@ -52,8 +53,8 @@ export function PersonDetails() {
         <p className="personal-info">{person.place_of_birth}</p>
       </div>
       <div className="person-details-column">
-        <h2>{person.name}</h2>
-        <h5>Biography</h5>
+        <h2 className="person-name">{person.name}</h2>
+        <h4 className="mb-2">Biography</h4>
         <div className="biography-container">
           {paragraphs.map((paragraph, index) => (
             <p key={index} className="biography-paragraph">

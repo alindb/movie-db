@@ -73,10 +73,16 @@
 
       > button {
         position: absolute;
-        bottom: 0;
+        bottom: 3px;
         right: 45%;
         z-index: 1;
         width: 130px;
+
+        @media screen and (max-width: 768px) {
+          right: 0;
+          left: 0;
+          margin: 0 auto;
+        }
       }
 
       &.expanded > button {
@@ -107,6 +113,18 @@
     flex-flow: row nowrap;
     gap: 10px;
     width: calc(50% - 10px);
+    p {
+      line-height: 1.2;
+    }
+
+    @media screen and (max-width: 768px) {
+      h5 {
+        font-size: 16px;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
 
     :last-child {
       display: flex;
