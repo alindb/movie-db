@@ -1,6 +1,6 @@
 .backdrop {
-  width: calc(100% - 20px);
-  max-width: 984px;
+  width: calc(100vw - 2 * var(--padding));
+  max-width: calc(var(--max-width) - 2 * var(--padding));
   max-height: 400px;
   object-fit: cover;
   position: absolute;
@@ -21,6 +21,11 @@
     align-items: flex-end;
     gap: 10px;
     padding: 0 10px;
+
+    @media screen and (max-width: 768px) {
+      flex-flow: column nowrap;
+      align-items: flex-start;
+    }
   }
 
   .fa-calendar {
@@ -64,7 +69,7 @@
       flex-flow: row wrap;
       padding: 0;
       gap: 10px;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
 
       > button {
         position: absolute;
@@ -75,7 +80,7 @@
       }
 
       &.expanded > button {
-        bottom: -30px;
+        bottom: -40px;
       }
 
       &.collapsed {
@@ -116,6 +121,12 @@
   margin-left: auto;
   font-size: 20px;
   line-height: 20px;
+
+  @media screen and (max-width: 768px) {
+    position: absolute;
+    right: 10px;
+    top: 267px;
+  }
 
   .fa-star {
     display: flex;

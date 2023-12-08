@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
 .navbar {
   height: 56px;
   display: flex;
@@ -7,11 +9,33 @@
   padding: 10px 0;
   gap: 10px;
 
+  h2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 32px;
+    line-height: 32px;
+    margin-top: 2px;
+  }
+
+  h2.mobile {
+    display: none;
+  }
+
   i.fa-film,
   i.fa-magnifying-glass {
     font-size: 1.5em;
   }
   i.fa-magnifying-glass {
     margin-left: 20px;
+  }
+  @media screen and (max-width: 768px) {
+    h2:not(.mobile) {
+      display: none;
+    }
+    h2.mobile {
+      display: block;
+    }
+    i {
+      display: none;
+    }
   }
 }

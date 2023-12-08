@@ -11,6 +11,21 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --max-width: 1024px;
+  --padding: 20px;
+
+  // --small-screen: 768px;
+  @media screen and (max-width: 768px) {
+    --padding: 10px;
+  }
+}
+
+html {
+  --padding: 20px;
+  @media screen and (max-width: 768px) {
+    --padding: 10px;
+  }
 }
 
 h1,

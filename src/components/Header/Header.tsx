@@ -7,6 +7,7 @@ export default function Header() {
     <Navbar>
       <i className="fa-solid fa-film" />
       <h2>Movie DB</h2>
+      <h2 className="mobile">MDB</h2>
       <i className="fa-solid fa-magnifying-glass" />
       <Search />
     </Navbar>
