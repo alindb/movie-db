@@ -1,7 +1,6 @@
 import { Person, Movie, TV } from "../../typescript/interfaces";
 
-const token =
-  "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3ZDg2YWY5NTBkOTBkYjY0NjQ2NWNjMDcyZTNkZGM5YiIsInN1YiI6IjY1NzA0YThmZDE4ZmI5MDk1N2EyOTQ0YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.A73cPKE1M-650wjSN4PAIZEqGgt4jchsFKLYsuyqwu0";
+const token = import.meta.env.VITE_ACCESS_TOKEN;
 
 export const searchAll = async (
   query?: string
