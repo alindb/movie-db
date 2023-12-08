@@ -1,11 +1,12 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { Person } from "../../typescript/interfaces";
 import { Button } from "react-bootstrap";
-import { useState } from "react";
-import { getParagraphs, getReleaseYear } from "../../utils/string";
-import { PosterImg } from "../PosterImg";
+import { useEffect, useState } from "react";
+import { getParagraphs } from "../../utils/string";
 import { ProfileImg } from "../ProfileImg";
 import "./PersonDetails.scss";
+import Credit from "./components/Credit";
+import { sortOnReleaseDate } from "../../utils/sort";
 
 const GENDER = {
   0: "Unknown",
@@ -29,6 +30,10 @@ export function PersonDetails() {
     ? getParagraphs(person.biography)
     : [`Could not find a biography for ${person.name}.`];
   const paragraphs = readMore ? biography : biography.slice(0, 2);
+
+  useEffect(() => {
+    document.title = `Movie DB | ${person.name}`;
+  }, [person]);
 
   return (
     <div className="person-details">
@@ -64,31 +69,17 @@ export function PersonDetails() {
             </Button>
           )}
         </div>
-        <h4>Credits</h4>
-        <h5>Actor</h5>
+        <h3 className="mb-3">Credits</h3>
+        <h4 className="mb-2">{`Actor (${person.movie_credits.cast.length})`}</h4>
         <div className="person-movies">
-          {person.movie_credits.cast.slice(0, 8).map((movie) => (
-            <Link preventScrollReset={true} to={`/movie/${movie.id}`}>
-              <PosterImg path={movie.poster_path} alt={movie.original_title} />
-              <div>
-                <p className="title">{movie.original_title}</p>
-                <p className="character">as {movie.character}</p>
-              </div>
-              <p>{getReleaseYear(movie)}</p>
-            </Link>
+          {person.movie_credits.cast.sort(sortOnReleaseDate).map((movie) => (
+            <Credit movie={movie} />
           ))}
         </div>
-        <h5>Crew</h5>
+        <h4 className="mb-2">{`Crew (${person.movie_credits.crew.length})`}</h4>
         <div className="person-movies">
-          {person.movie_credits.crew.slice(0, 8).map((movie) => (
-            <Link to={`/movie/${movie.id}`}>
-              <PosterImg path={movie.poster_path} alt={movie.original_title} />
-              <div>
-                <p className="title">{movie.original_title}</p>
-                <p className="job">{movie.job}</p>
-              </div>
-              <p>{getReleaseYear(movie)}</p>
-            </Link>
+          {person.movie_credits.crew.sort(sortOnReleaseDate).map((movie) => (
+            <Credit movie={movie} />
           ))}
         </div>
       </div>

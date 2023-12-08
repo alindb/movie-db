@@ -21,6 +21,9 @@ export interface Movie {
   vote_count: number;
   media_type: "movie";
 }
+
+export type CastCredit = Movie & CastMember;
+export type CrewCredit = Movie & CrewMember;
 export interface Person {
   gender: 0 | 1 | 2 | 3;
   biography: string;
@@ -29,8 +32,8 @@ export interface Person {
   id: number;
   known_for_department: string;
   movie_credits: {
-    cast: (Movie & CastMember)[];
-    crew: (Movie & CrewMember)[];
+    cast: CastCredit[];
+    crew: CrewCredit[];
   };
   name: string;
   original_name: string;

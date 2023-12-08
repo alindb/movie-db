@@ -7,11 +7,14 @@ import Credits from "./components/Credits";
 import Reviews from "./components/Reviews";
 import { PosterImg } from "../PosterImg";
 import { imageBaseUrl } from "../../../config";
+import { useEffect } from "react";
 
 export default function MovieDetails() {
   const { movie } = useLoaderData() as { movie: Movie };
 
-  console.warn("Movie", movie);
+  useEffect(() => {
+    document.title = `Movie DB | ${movie.original_title}`;
+  }, [movie]);
 
   return (
     <>

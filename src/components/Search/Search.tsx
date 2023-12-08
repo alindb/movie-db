@@ -17,7 +17,6 @@ export default function Search() {
       return;
     }
     const response = await searchAll(query);
-    console.log(response);
     setSearchResult(response);
   };
 

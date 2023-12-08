@@ -34,7 +34,7 @@ export default function Credits({ credits }: { credits: CreditsType }) {
             variant="outline-secondary"
             onClick={() => setCastExpanded((prevValue) => !prevValue)}
           >
-            {castExpanded ? "Hide cast" : "Show all cast"}
+            {castExpanded ? "Show less cast" : "Show all cast"}
           </Button>
         )}
       </ul>
@@ -61,7 +61,7 @@ export default function Credits({ credits }: { credits: CreditsType }) {
             variant="outline-secondary"
             onClick={() => setCrewExpanded((prevValue) => !prevValue)}
           >
-            {crewExpanded ? "Hide crew" : "Show all crew"}
+            {crewExpanded ? "Show less crew" : "Show all crew"}
           </Button>
         )}
       </ul>
