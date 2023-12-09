@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
-import { Credits as CreditsType } from "../../../typescript/interfaces";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import classNames from "classnames";
 import Button from "react-bootstrap/Button";
-import { ProfileImg } from "../../ProfileImg";
+import ProfileImg from "components/ProfileImg";
+import { Credits as CreditsType } from "typescript/interfaces";
 
 export default function Credits({ credits }: { credits: CreditsType }) {
   const [castExpanded, setCastExpanded] = useState(false);

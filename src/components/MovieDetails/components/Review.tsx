@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Badge from "react-bootstrap/Badge";
 import Button from "react-bootstrap/Button";
-import { Review as ReviewType } from "../../../typescript/interfaces";
-import { getParagraphs } from "../../../utils/string";
-import { ProfileImg } from "../../ProfileImg";
+import ProfileImg from "components/ProfileImg";
+import { getParagraphs } from "utils/string";
+import { Review as ReviewType } from "typescript/interfaces";
 import "./Reviews.scss";
 
 export default function Review({ review }: { review: ReviewType }) {

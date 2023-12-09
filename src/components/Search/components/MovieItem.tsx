@@ -1,8 +1,8 @@
-import Dropdown from "react-bootstrap/Dropdown";
-import { Movie } from "../../../typescript/interfaces";
-import { getReleaseYear } from "../../../utils/string";
 import { useNavigate } from "react-router-dom";
-import { PosterImg } from "../../PosterImg";
+import Dropdown from "react-bootstrap/Dropdown";
+import PosterImg from "components/PosterImg";
+import { getReleaseYear } from "utils/string";
+import { Movie } from "typescript/interfaces";
 
 export default function MovieItem({
   movie,

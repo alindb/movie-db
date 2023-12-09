@@ -1,7 +1,7 @@
 import Dropdown from "react-bootstrap/Dropdown";
-import { Person } from "../../../typescript/interfaces";
 import { useNavigate } from "react-router-dom";
-import { ProfileImg } from "../../ProfileImg";
+import ProfileImg from "components/ProfileImg";
+import { Person } from "typescript/interfaces";
 
 export default function PersonItem({
   person,
