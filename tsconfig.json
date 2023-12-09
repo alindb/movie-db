@@ -18,8 +18,17 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    "baseUrl": ".",
+    "paths": {
+      "assets/*": ["src/assets/*"],
+      "components/*": ["src/components/*"],
+      "hooks/*": ["src/hooks/*"],
+      "typescript/*": ["src/typescript/*"],
+      "utils/*": ["src/utils/*"]
+    }
   },
-  "include": ["src", "config.ts"],
+  "include": ["src", "src/assets/constants.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -1,12 +1,12 @@
-import { useLoaderData } from "react-router-dom";
-import { Person } from "../../typescript/interfaces";
-import { Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
-import { getParagraphs } from "../../utils/string";
-import { ProfileImg } from "../ProfileImg";
-import "./PersonDetails.scss";
+import { useLoaderData } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import ProfileImg from "components/ProfileImg";
 import Credit from "./components/Credit";
-import { sortOnReleaseDate } from "../../utils/sort";
+import { getParagraphs } from "utils/string";
+import { sortOnReleaseDate } from "utils/sort";
+import { Person } from "typescript/interfaces";
+import "./PersonDetails.scss";
 
 const GENDER = {
   0: "Unknown",
@@ -15,7 +15,7 @@ const GENDER = {
   3: "Non-binary",
 };
 
-export function PersonDetails() {
+export default function PersonDetails() {
   const [readMore, setReadMore] = useState(false);
 
   const { person } = useLoaderData() as { person: Person };

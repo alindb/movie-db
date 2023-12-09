@@ -1,4 +1,4 @@
-import { Person, Movie, TV } from "../../typescript/interfaces";
+import { Person, Movie, TV } from "typescript/interfaces";
 
 const token = import.meta.env.VITE_ACCESS_TOKEN;
 

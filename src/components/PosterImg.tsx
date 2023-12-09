@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { imageBaseUrl } from "../../config";
+import { IMG_BASE_URL } from "assets/constants";
 
 type PosterSize =
   | "w92"
@@ -16,11 +16,11 @@ interface PosterImgProps {
   size?: PosterSize;
 }
 
-export function PosterImg({ path, alt, size = "w92" }: PosterImgProps) {
+export default function PosterImg({ path, alt, size = "w92" }: PosterImgProps) {
   return path ? (
     <img
       className={classNames("poster", size)}
-      src={`${imageBaseUrl}${size}${path}`}
+      src={`${IMG_BASE_URL}${size}${path}`}
       alt={alt}
     />
   ) : (

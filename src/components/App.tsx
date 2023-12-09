@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import Header from "./components/Header";
+import Header from "components/Header";
+import { useScrollToTop } from "hooks/useScrollToTop";
 import "./App.scss";
-import { useScrollToTop } from "./hooks/useScrollToTop";
 
 export default function App() {
   useScrollToTop();

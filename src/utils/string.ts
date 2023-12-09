@@ -1,4 +1,4 @@
-import { Movie } from "../typescript/interfaces";
+import { Movie } from "typescript/interfaces";
 
 export const getReleaseYear = (movie: Movie) =>
   movie.release_date

@@ -1,5 +1,5 @@
 import Navbar from "react-bootstrap/Navbar";
-import Search from "../Search";
+import Search from "components/Search";
 import "./Header.scss";
 
 export default function Header() {

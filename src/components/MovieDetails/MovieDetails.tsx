@@ -1,13 +1,13 @@
+import { useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
+import PosterImg from "components/PosterImg";
 import Rating from "./components/Rating";
-import { Movie } from "../../typescript/interfaces";
-import { getReleaseYear, getRuntime } from "../../utils/string";
-import "./MovieDetails.scss";
 import Credits from "./components/Credits";
 import Reviews from "./components/Reviews";
-import { PosterImg } from "../PosterImg";
-import { imageBaseUrl } from "../../../config";
-import { useEffect } from "react";
+import { getReleaseYear, getRuntime } from "utils/string";
+import { Movie } from "typescript/interfaces";
+import { IMG_BASE_URL } from "assets/constants";
+import "./MovieDetails.scss";
 
 export default function MovieDetails() {
   const { movie } = useLoaderData() as { movie: Movie };
@@ -20,7 +20,7 @@ export default function MovieDetails() {
     <>
       <img
         className="backdrop"
-        src={`${imageBaseUrl}w1280${movie.backdrop_path}`}
+        src={`${IMG_BASE_URL}w1280${movie.backdrop_path}`}
         alt={movie.original_title}
       />
       <div className="movie-details">

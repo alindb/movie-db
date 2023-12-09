@@ -1,4 +1,4 @@
-import { Movie } from "../typescript/interfaces";
+import { Movie } from "typescript/interfaces";
 
 export const sortOnReleaseDate = (movieA: Movie, movieB: Movie) => {
   const dateA = new Date(movieA.release_date);

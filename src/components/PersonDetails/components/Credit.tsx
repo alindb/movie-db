@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { PosterImg } from "../../PosterImg";
-import { CastCredit, CrewCredit } from "../../../typescript/interfaces";
-import { getReleaseYear } from "../../../utils/string";
+import PosterImg from "components/PosterImg";
+import { getReleaseYear } from "utils/string";
+import { CastCredit, CrewCredit } from "typescript/interfaces";
 
 interface CreditProps {
   movie: CastCredit | CrewCredit;

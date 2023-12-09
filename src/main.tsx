@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
-import "./index.scss";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import ErrorPage from "./components/ErrorPage.tsx";
-import { PersonDetails } from "./components/PersonDetails/PersonDetails.tsx";
-import MovieDetails from "./components/MovieDetails";
-import { loader as movieLoader } from "./components/MovieDetails/loader";
-import { loader as personLoader } from "./components/PersonDetails/loader";
-import { SearchResult } from "./components/SearchResult.tsx";
+import App from "components/App.tsx";
+import ErrorPage from "components/ErrorPage.tsx";
+import PersonDetails from "components/PersonDetails/PersonDetails.tsx";
+import MovieDetails from "components/MovieDetails";
+import SearchResult from "components/SearchResult.tsx";
+import { loader as movieLoader } from "components/MovieDetails/loader";
+import { loader as personLoader } from "components/PersonDetails/loader";
+import "./main.scss";
 
 const router = createBrowserRouter([
   {
