@@ -108,13 +108,28 @@
       }
     }
   }
+
   .cast {
     display: flex;
     flex-flow: row nowrap;
     gap: 10px;
     width: calc(50% - 10px);
-    p {
-      line-height: 1.2;
+
+    a {
+      width: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 10px;
+
+      .cast-text-container {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+
+        p {
+          line-height: 1.2;
+        }
+      }
     }
 
     @media screen and (max-width: 768px) {
@@ -124,12 +139,6 @@
       p {
         font-size: 14px;
       }
-    }
-
-    :last-child {
-      display: flex;
-      flex-flow: column nowrap;
-      justify-content: center;
     }
   }
 }

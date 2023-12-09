@@ -5,7 +5,7 @@ import App from "components/App.tsx";
 import ErrorPage from "components/ErrorPage.tsx";
 import PersonDetails from "components/PersonDetails/PersonDetails.tsx";
 import MovieDetails from "components/MovieDetails";
-import SearchResult from "components/SearchResult.tsx";
+import StartPage from "components/StartPage";
 import { loader as movieLoader } from "components/MovieDetails/loader";
 import { loader as personLoader } from "components/PersonDetails/loader";
 import "./main.scss";
@@ -17,8 +17,8 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "search/:query",
-        element: <SearchResult />,
+        path: "/",
+        element: <StartPage />,
       },
       {
         path: "movie/:movieId",

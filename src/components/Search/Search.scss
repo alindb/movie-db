@@ -1,11 +1,15 @@
 .search-bar {
   max-width: 600px;
   flex: 1 1;
+  @media screen and (max-width: 768px) {
+    max-width: unset;
+  }
 }
 
 .dropdown-menu {
   padding: 0;
   width: 400px;
+  max-width: 100%;
 }
 
 .list-item-movie {

@@ -30,6 +30,7 @@ i.profile.fa-user {
   align-items: center;
   justify-content: center;
   font-size: 50px;
+  min-width: 45px;
 }
 img.profile:not(.w45),
 i.profile.fa-user:not(.w45) {
@@ -48,4 +49,8 @@ i.poster.fa-film:not(.w92) {
   height: 300px;
   font-size: 170px;
   border-radius: 4px;
+}
+
+.start-page {
+  height: calc(100svh - var(--header-height));
 }

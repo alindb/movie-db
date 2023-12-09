@@ -20,13 +20,13 @@ export default function Credits({ credits }: { credits: CreditsType }) {
       >
         {credits.cast.map((cast) => (
           <li className="cast" key={cast.id}>
-            <ProfileImg path={cast.profile_path} alt={cast.name} />
-            <div>
-              <Link to={`/person/${cast.id}`}>
+            <Link to={`/person/${cast.id}`}>
+              <ProfileImg path={cast.profile_path} alt={cast.name} />
+              <div className="cast-text-container">
                 <h5>{cast.name}</h5>
-              </Link>
-              <p>as {cast.character}</p>
-            </div>
+                <p>as {cast.character}</p>
+              </div>
+            </Link>
           </li>
         ))}
         {credits.cast.length > 8 && (
@@ -47,13 +47,13 @@ export default function Credits({ credits }: { credits: CreditsType }) {
       >
         {credits.crew.map((crew) => (
           <li className="cast" key={`${crew.id}-${crew.job}`}>
-            <ProfileImg path={crew.profile_path} alt={crew.name} />
-            <div>
-              <Link to={`/person/${crew.id}`}>
+            <Link to={`/person/${crew.id}`}>
+              <ProfileImg path={crew.profile_path} alt={crew.name} />
+              <div className="cast-text-container">
                 <h5>{crew.name}</h5>
-              </Link>
-              <p>{crew.job}</p>
-            </div>
+                <p>{crew.job}</p>
+              </div>
+            </Link>
           </li>
         ))}
         {credits.crew.length > 8 && (
