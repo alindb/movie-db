@@ -25,6 +25,10 @@
         height: auto;
       }
 
+      &:hover img.poster {
+        filter: brightness(1.2);
+      }
+
       p.title {
         font-weight: 600;
       }
@@ -52,11 +56,13 @@
             font-weight: 500;
           }
           span:last-of-type {
+            color: var(--bs-body-color);
             font-size: 14px;
           }
         }
         .rating-text-container {
           > span {
+            color: var(--bs-body-color);
             font-size: 9.2px;
             line-height: 9.2px;
           }
