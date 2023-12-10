@@ -21,6 +21,17 @@ export const searchAll = async (
     .then((res) => res.slice(0, 8));
 };
 
+export const getTrending = async (): Promise<Movie[]> => {
+  return fetch(`https://api.themoviedb.org/3/trending/movie/day`, {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  })
+    .then((res) => res.json())
+    .then((res) => res.results.slice(0, 8));
+};
+
 export const getMovie = async (movieId: string): Promise<Movie> => {
   return fetch(
     `https://api.themoviedb.org/3/movie/${movieId}?append_to_response=credits,reviews`,

@@ -1,6 +1,6 @@
 import { LoaderFunctionArgs } from "react-router-dom";
-import { getPerson } from "../../utils/api/get";
-import { Person } from "../../typescript/interfaces";
+import { getPerson } from "utils/api/get";
+import { Person } from "typescript/interfaces";
 
 export async function loader({
   params,

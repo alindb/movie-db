@@ -1,6 +1,6 @@
 import { LoaderFunctionArgs } from "react-router-dom";
-import { getMovie } from "../../utils/api/get";
-import { Movie } from "../../typescript/interfaces";
+import { getMovie } from "utils/api/get";
+import { Movie } from "typescript/interfaces";
 
 export async function loader({
   params,

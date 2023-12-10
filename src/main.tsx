@@ -3,9 +3,10 @@ import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "components/App.tsx";
 import ErrorPage from "components/ErrorPage.tsx";
-import PersonDetails from "components/PersonDetails/PersonDetails.tsx";
-import MovieDetails from "components/MovieDetails";
 import StartPage from "components/StartPage";
+import MovieDetails from "components/MovieDetails";
+import PersonDetails from "components/PersonDetails";
+import { loader as startLoader } from "components/StartPage/loader";
 import { loader as movieLoader } from "components/MovieDetails/loader";
 import { loader as personLoader } from "components/PersonDetails/loader";
 import "./main.scss";
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <StartPage />,
+        loader: startLoader,
       },
       {
         path: "movie/:movieId",

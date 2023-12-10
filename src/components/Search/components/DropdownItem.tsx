@@ -1,7 +1,7 @@
 import Dropdown from "react-bootstrap/Dropdown";
 import PersonItem from "./PersonItem";
 import MovieItem from "./MovieItem";
-import { Person, Movie } from "../../../typescript/interfaces";
+import { Person, Movie } from "typescript/interfaces";
 
 const isMovie = (item: Movie | Person | null): item is Movie => {
   if (!item) return false;

@@ -1,4 +1,4 @@
-import { Movie } from "../../../typescript/interfaces";
+import { Movie } from "typescript/interfaces";
 
 interface RatingProps {
   movie: Movie;

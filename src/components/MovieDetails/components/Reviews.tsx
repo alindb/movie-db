@@ -1,4 +1,4 @@
-import { Reviews as ReviewsType } from "../../../typescript/interfaces";
+import { Reviews as ReviewsType } from "typescript/interfaces";
 import Review from "./Review";
 import "./Reviews.scss";
 

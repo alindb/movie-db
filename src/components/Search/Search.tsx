@@ -1,9 +1,9 @@
 import { ChangeEvent, useRef, useState } from "react";
 import { debounce } from "lodash";
 import Dropdown from "react-bootstrap/Dropdown";
-import DropdownItem from "../Search/components/DropdownItem";
-import { searchAll } from "../../utils/api/get";
-import { Movie, Person } from "../../typescript/interfaces";
+import DropdownItem from "components/Search/components/DropdownItem";
+import { searchAll } from "utils/api/get";
+import { Movie, Person } from "typescript/interfaces";
 import "./Search.scss";
 
 export default function Search() {
