@@ -8,7 +8,7 @@ export default function Reviews({ reviews }: { reviews: ReviewsType }) {
       <h3>{`Reviews (${reviews.results.length})`}</h3>
       <ul>
         {reviews.results.map((review) => (
-          <Review review={review} />
+          <Review key={review.id} review={review} />
         ))}
         {reviews.results.length === 0 && "No reviews found for this movie."}
       </ul>

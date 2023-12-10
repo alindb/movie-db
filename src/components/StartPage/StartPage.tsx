@@ -8,8 +8,6 @@ import "./StartPage.scss";
 export default function StartPage() {
   const { trendingMovies } = useLoaderData() as { trendingMovies: Movie[] };
 
-  console.warn("trendingMovies", trendingMovies);
-
   useEffect(() => {
     document.title = `Movie DB | Start page`;
   }, []);

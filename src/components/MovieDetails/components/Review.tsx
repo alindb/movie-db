@@ -30,8 +30,10 @@ export default function Review({ review }: { review: ReviewType }) {
           <span className="created-at">{review.created_at.slice(0, 10)}</span>
         </div>
       </div>
-      {paragraphs.map((paragraph) => (
-        <p className="review-paragraph">{paragraph}</p>
+      {paragraphs.map((paragraph, index) => (
+        <p key={index} className="review-paragraph">
+          {paragraph}
+        </p>
       ))}
       {reviewContent.length > 2 && (
         <Button

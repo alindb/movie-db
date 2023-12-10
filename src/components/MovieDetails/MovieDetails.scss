@@ -13,6 +13,8 @@
   text-align: left;
   background-size: contain;
   background-repeat: no-repeat;
+  min-height: calc(100svh - var(--header-height));
+  padding-bottom: 30px;
 
   .movie-details-header {
     display: flex;
@@ -77,6 +79,7 @@
         right: 45%;
         z-index: 1;
         width: 130px;
+        padding: 4px 10px;
 
         @media screen and (max-width: 768px) {
           right: 0;

@@ -12,17 +12,19 @@ const isCastCredit = (credit: CastCredit | CrewCredit): credit is CastCredit =>
 
 export default function Credit({ movie }: CreditProps) {
   return (
-    <Link to={`/movie/${movie.id}`}>
-      <PosterImg path={movie.poster_path} alt={movie.original_title} />
-      <div>
-        <p className="title">{movie.original_title}</p>
-        {isCastCredit(movie) ? (
-          <p className="character">as {movie.character}</p>
-        ) : (
-          <p className="job">{movie.job}</p>
-        )}
-      </div>
-      <p>{getReleaseYear(movie)}</p>
-    </Link>
+    <li className="credit">
+      <Link to={`/movie/${movie.id}`}>
+        <PosterImg path={movie.poster_path} alt={movie.original_title} />
+        <div>
+          <p className="title">{movie.original_title}</p>
+          {isCastCredit(movie) ? (
+            <p className="character">as {movie.character}</p>
+          ) : (
+            <p className="job">{movie.job}</p>
+          )}
+        </div>
+        <p>{getReleaseYear(movie)}</p>
+      </Link>
+    </li>
   );
 }

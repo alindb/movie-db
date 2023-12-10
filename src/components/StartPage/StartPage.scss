@@ -2,13 +2,10 @@
   min-height: calc(100svh - var(--header-height));
   padding-bottom: 30px;
 
-  .trending-movies {
+  ul.trending-movies {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    list-style: none;
-    padding: 0;
-    margin: 0;
     gap: var(--padding);
 
     li a {

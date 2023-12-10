@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import ProfileImg from "components/ProfileImg";
-import Credit from "./components/Credit";
 import { getParagraphs } from "utils/string";
-import { sortOnReleaseDate } from "utils/sort";
 import { Person } from "typescript/interfaces";
 import "./PersonDetails.scss";
+import CreditsAsCrew from "./components/CreditsAsCrew";
+import CreditsAsCast from "./components/CreditsAsCast";
 
 const GENDER = {
   0: "Unknown",
@@ -19,6 +19,8 @@ export default function PersonDetails() {
   const [readMore, setReadMore] = useState(false);
 
   const { person } = useLoaderData() as { person: Person };
+
+  const biographyRef = useRef<HTMLHeadingElement>(null);
 
   const getAge = (person: Person): number => {
     const ageDiffMs = Date.now() - new Date(person.birthday).getTime();
@@ -54,7 +56,9 @@ export default function PersonDetails() {
       </div>
       <div className="person-details-column">
         <h2 className="person-name">{person.name}</h2>
-        <h4 className="mb-2">Biography</h4>
+        <h4 className="mb-2" ref={biographyRef}>
+          Biography
+        </h4>
         <div className="biography-container">
           {paragraphs.map((paragraph, index) => (
             <p key={index} className="biography-paragraph">
@@ -64,25 +68,18 @@ export default function PersonDetails() {
           {biography.length > 2 && (
             <Button
               variant="outline-secondary text-only"
-              onClick={() => setReadMore((prevState) => !prevState)}
+              onClick={() => {
+                setReadMore((prevState) => !prevState);
+                biographyRef.current?.scrollIntoView();
+              }}
             >
               {readMore ? "Show less" : "Read more"}
             </Button>
           )}
         </div>
         <h3 className="mb-3">Credits</h3>
-        <h4 className="mb-2">{`Actor (${person.movie_credits.cast.length})`}</h4>
-        <div className="person-movies">
-          {person.movie_credits.cast.sort(sortOnReleaseDate).map((movie) => (
-            <Credit movie={movie} />
-          ))}
-        </div>
-        <h4 className="mb-2">{`Crew (${person.movie_credits.crew.length})`}</h4>
-        <div className="person-movies">
-          {person.movie_credits.crew.sort(sortOnReleaseDate).map((movie) => (
-            <Credit movie={movie} />
-          ))}
-        </div>
+        <CreditsAsCast creditsAsCast={person.movie_credits.cast} />
+        <CreditsAsCrew creditsAsCrew={person.movie_credits.crew} />
       </div>
     </div>
   );
