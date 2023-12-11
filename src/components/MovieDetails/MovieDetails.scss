@@ -76,16 +76,9 @@
       > button {
         position: absolute;
         bottom: 3px;
-        right: 45%;
+        right: 50%;
+        transform: translateX(50%);
         z-index: 1;
-        width: 130px;
-        padding: 4px 10px;
-
-        @media screen and (max-width: 768px) {
-          right: 0;
-          left: 0;
-          margin: 0 auto;
-        }
       }
 
       &.expanded > button {
@@ -131,6 +124,7 @@
 
         p {
           line-height: 1.2;
+          font-weight: 300;
         }
       }
     }

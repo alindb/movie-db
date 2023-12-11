@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import classNames from "classnames";
 import Button from "react-bootstrap/Button";
@@ -9,9 +9,12 @@ export default function Credits({ credits }: { credits: CreditsType }) {
   const [castExpanded, setCastExpanded] = useState(false);
   const [crewExpanded, setCrewExpanded] = useState(false);
 
+  const castRef = useRef<HTMLHeadingElement>(null);
+  const crewRef = useRef<HTMLHeadingElement>(null);
+
   return (
     <div className="credits">
-      <h3>{`Cast (${credits.cast.length})`}</h3>
+      <h3 ref={castRef}>{`Cast (${credits.cast.length})`}</h3>
       <ul
         className={classNames(
           castExpanded ? "expanded" : "collapsed",
@@ -32,13 +35,16 @@ export default function Credits({ credits }: { credits: CreditsType }) {
         {credits.cast.length > 8 && (
           <Button
             variant="outline-secondary"
-            onClick={() => setCastExpanded((prevValue) => !prevValue)}
+            onClick={() => {
+              setCastExpanded((prevValue) => !prevValue);
+              castRef.current?.scrollIntoView();
+            }}
           >
             {castExpanded ? "Show less cast" : "Show all cast"}
           </Button>
         )}
       </ul>
-      <h3>{`Crew (${credits.crew.length})`}</h3>
+      <h3 ref={crewRef}>{`Crew (${credits.crew.length})`}</h3>
       <ul
         className={classNames(
           crewExpanded ? "expanded" : "collapsed",
@@ -59,7 +65,10 @@ export default function Credits({ credits }: { credits: CreditsType }) {
         {credits.crew.length > 8 && (
           <Button
             variant="outline-secondary"
-            onClick={() => setCrewExpanded((prevValue) => !prevValue)}
+            onClick={() => {
+              setCrewExpanded((prevValue) => !prevValue);
+              crewRef.current?.scrollIntoView();
+            }}
           >
             {crewExpanded ? "Show less crew" : "Show all crew"}
           </Button>
